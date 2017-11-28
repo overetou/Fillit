@@ -1,33 +1,30 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   fillit.h                                           :+:      :+:    :+:   */
+/*   ft_check.c                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: overetou <overetou@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2017/11/28 17:59:35 by overetou          #+#    #+#             */
-/*   Updated: 2017/11/28 19:21:49 by fchevrey         ###   ########.fr       */
+/*   Created: 2017/11/28 20:31:37 by overetou          #+#    #+#             */
+/*   Updated: 2017/11/28 20:31:47 by overetou         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef FILLIT_H
-# define FILLIT_H
-# include <string.h>
-# include "../libft/libft.h"
+#include "fillit.h"
 
-typedef struct	s_trio
+static short	ft_check_argc(int argc)
 {
-	char			*l1;
-	char			*l2;
-	char			*l3;
-	char			*l4;
-	struct s_trio	*next;
-	char			ltr;
-}				t_trio;
+	if (argc != 2)
+		return (0);
+	return (1);	
+}
 
-void	ft_tadd(t_trio **atrio, t_trio *new);
-t_trio	*ft_tnew(char *str, char ltr);
-char	*ft_flcpy(char *flname);
-short	ft_check(int argc, char **argv);
-
-#endif
+short			ft_check(int argc, char **argv)
+{
+	if (!ft_check_argc(argc))
+	{
+		ft_putstr("usage: fillit input_file\n");
+		return (0);
+	}
+	return(1);
+}

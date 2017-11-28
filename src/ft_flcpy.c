@@ -1,33 +1,30 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   fillit.h                                           :+:      :+:    :+:   */
+/*   ft_flcpy.c                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: overetou <overetou@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2017/11/28 17:59:35 by overetou          #+#    #+#             */
-/*   Updated: 2017/11/28 19:21:49 by fchevrey         ###   ########.fr       */
+/*   Created: 2017/11/28 19:38:46 by overetou          #+#    #+#             */
+/*   Updated: 2017/11/28 19:39:00 by overetou         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef FILLIT_H
-# define FILLIT_H
-# include <string.h>
-# include "../libft/libft.h"
+#include "fillit.h"
+#include <fcntl.h>
+#include <unistd.h>
 
-typedef struct	s_trio
+char	*ft_flcpy(char *flname)
 {
-	char			*l1;
-	char			*l2;
-	char			*l3;
-	char			*l4;
-	struct s_trio	*next;
-	char			ltr;
-}				t_trio;
+	int		fd;
+	char	*cpy;
 
-void	ft_tadd(t_trio **atrio, t_trio *new);
-t_trio	*ft_tnew(char *str, char ltr);
-char	*ft_flcpy(char *flname);
-short	ft_check(int argc, char **argv);
-
-#endif
+	if (!(cpy = ft_strnew(546)))
+		return (NULL);
+	fd = open(flname, O_RDONLY);
+	if (fd == -1)
+		return (NULL);
+	if (read(fd, cpy, 546) <= 0)
+		return (NULL);
+	return (cpy);
+}

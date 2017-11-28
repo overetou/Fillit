@@ -11,9 +11,12 @@
 /* ************************************************************************** */
 
 #include "../libft/libft.h"
+#include "fillit.h"
 
 int	main(int argc, char **argv)
 {
-	ft_putstr("coucou");
+	if (!ft_check(argc, argv))
+		return (0);
+	ft_putstr(ft_flcpy(argv[1]));
 	return (0);
 }
