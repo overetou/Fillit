@@ -43,8 +43,6 @@ all: $(NAME)
 $(NAME):$(FCT_O)
 	ar  rc $(LIB) $(FCT_O)
 	ranlib $(LIB)
-	$(CC) $(CFLAGS) -o $(NAME) $(SRC) -L. -lft
-
 clean:
 	rm -f $(FCT_O)
 
