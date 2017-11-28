@@ -13,4 +13,14 @@
 #ifndef FILLIT_H
 # define FILLIT_H
 
+typedef struct	s_trio 
+{
+	char			*l1;
+	char			*l2;
+	char			*l3;
+	char			*l4;
+	stuct s_trio	*next;
+	char			letr;
+}				t_trio;
+
 #endif
