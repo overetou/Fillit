@@ -13,14 +13,26 @@
 #include "../libft/libft.h"
 #include "fillit.h"
 
+short			ft_check_argc(int argc)
+{
+	if (argc != 2)
+	{
+		ft_putstr("usage: fillit input_file\n");
+		return (0);
+	}
+	return (1);
+}
+
 int	main(int argc, char **argv)
 {
 	char	*cpy;
 
 	if (!ft_check_argc(argc))
 		return (0);
-	cpy = ft_flcpy(argv[1]);
-	if(ft_check(cpy))
+	if (!(cpy = ft_flcpy(argv[1])) || !ft_check(cpy))
+	{
+		ft_putstr("error\n");
 		return (0);
+	}
 	return (0);
 }
