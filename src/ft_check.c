@@ -16,7 +16,7 @@ short	ft_check_argc(int argc)
 {
 	if (argc != 2)
 	{
-		ft_putstr("usage: fillit input_file\n")
+		ft_putstr("usage: fillit input_file\n");
 		return (0);
 	}
 	return (1);
@@ -33,7 +33,7 @@ short	ft_countbs(char *cpy)
 		pt = 0;
 		htg = 0;
 		endl = 0;
-		while (endl % 5 && *cpy)
+		while (endl != 5 && *cpy)
 		{
 			if (*cpy == '.')
 				pt++;
@@ -43,7 +43,7 @@ short	ft_countbs(char *cpy)
 				endl++;
 			cpy++;
 		}
-		if ((pt + htg) % 16)
+		if (pt != 12 || htg != 4 || endl != 5)
 			return (0);
 		cpy++;
 	}
