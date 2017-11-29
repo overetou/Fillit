@@ -1,41 +1,37 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   main.c                                             :+:      :+:    :+:   */
+/*   ft_mapnew.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: fchevrey <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2017/11/28 17:25:46 by fchevrey          #+#    #+#             */
-/*   Updated: 2017/11/29 19:59:38 by fchevrey         ###   ########.fr       */
+/*   Created: 2017/11/29 19:43:15 by fchevrey          #+#    #+#             */
+/*   Updated: 2017/11/29 20:05:02 by fchevrey         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../libft/libft.h"
-#include "fillit.h"
+#include <stdlib.h>
 
-static short	ft_check_argc(int argc)
+char	**ft_mapnew(int size)
 {
-	if (argc != 2)
-	{
-		ft_putstr("usage: fillit input_file\n");
-		return (0);
-	}
-	return (1);
-}
-
-int				main(int argc, char **argv)
-{
-	char	*cpy;
 	char	**map;
+	int		i;
+	int		j;
 
-	if (!ft_check_argc(argc))
-		return (0);
-	if (!(cpy = ft_flcpy(argv[1])) || !ft_check(cpy))
+	if (!(map = (char**)malloc(sizeof(char*) * (size + 1))))
+		return (NULL);
+	map[size] = NULL;
+	i = size;
+	while (i--)
+		if (!(map[i] = ft_strnew(i)))
+			return (NULL);
+	i = -1;
+	while (map[++i])
 	{
-		ft_putstr("error\n");
-		return (0);
+		j = -1;
+		while (++j < size)
+			map[i][j] = '.';
 	}
-	map = ft_mapnew(5);
-	ft_tabprint(map);
-	return (0);
+	return (map);
 }
