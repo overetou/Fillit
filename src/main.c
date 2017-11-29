@@ -20,6 +20,7 @@ int	main(int argc, char **argv)
 	if (!ft_check_argc(argc))
 		return (0);
 	cpy = ft_flcpy(argv[1]);
-	ft_check(cpy);
+	if(ft_check(cpy))
+		return (0);
 	return (0);
 }

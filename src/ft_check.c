@@ -12,7 +12,7 @@
 
 #include "fillit.h"
 
-short	ft_check_argc(int argc)
+short			ft_check_argc(int argc)
 {
 	if (argc != 2)
 	{
@@ -22,7 +22,7 @@ short	ft_check_argc(int argc)
 	return (1);
 }
 
-short	ft_countbs(char *cpy)
+static short	ft_countbs(char *cpy)
 {
 	unsigned int	pt;
 	unsigned int	htg;
@@ -50,8 +50,12 @@ short	ft_countbs(char *cpy)
 	return (1);
 }
 
-short	ft_check(int argc, char *cpy)
+short			ft_check(char *cpy)
 {
-	ft_countbs(cpy);
+	if (!ft_countbs(cpy))
+	{
+		ft_putstr("error\n");
+		return (0);
+	}
 	return(1);
 }
