@@ -29,6 +29,5 @@ void	ft_tadd(t_trio **atrio, t_trio *new);
 t_trio	*ft_tnew(char *str, char ltr);
 char	*ft_flcpy(char *flname);
 short	ft_check(char *cpy);
-short	ft_check_argc(int argc);
 
 #endif
