@@ -12,21 +12,36 @@
 
 #include "fillit.h"
 
-static short	ft_check_argc(int argc)
+short	ft_check_argc(int argc)
 {
 	if (argc != 2)
 		return (0);
-	return (1);	
+	return (1);
 }
 
-static short	ft_checkfile(char **argv)
-
-short			ft_check(int argc, char *cpy)
+short	ft_countbs(char *cpy)
 {
-	if (!ft_check_argc(argc))
+	unsigned int	pts;
+	unsigned int	htgs;
+	unsigned int	endl;
+
+	while (cpy++)
 	{
-		ft_putstr("usage: fillit input_file\n");
-		return (0);
+		if (*cpy != '.' && *cpy != '#' &&)
+		if (*cpy == '.')
+			pts++;
+		if (*cpy == '#')
+			htgs++;
+		if (*cpy == '\n')
+		{
+			endl++;
+			if ((pts + htgs) % 5)
+		}
 	}
+}
+
+short	ft_check(int argc, char *cpy)
+{
+	ft_countbs(cpy);
 	return(1);
 }

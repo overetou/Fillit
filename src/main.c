@@ -15,8 +15,11 @@
 
 int	main(int argc, char **argv)
 {
-	if (!ft_check(argc, argv))
+	char	*cpy;
+
+	if (!ft_check_argc(argc))
 		return (0);
-	ft_putstr(ft_flcpy(argv[1]));
+	cpy = ft_flcpy(argv[1]);
+	ft_check(cpy);
 	return (0);
 }
