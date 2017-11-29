@@ -28,7 +28,7 @@ static short	ft_countbs(char *cpy)
 	unsigned int	htg;
 	unsigned int	endl;
 
-	while (cpy)
+	while (*cpy)
 	{
 		pt = 0;
 		htg = 0;
@@ -45,7 +45,6 @@ static short	ft_countbs(char *cpy)
 		}
 		if (pt != 12 || htg != 4 || endl != 5)
 			return (0);
-		cpy++;
 	}
 	return (1);
 }
