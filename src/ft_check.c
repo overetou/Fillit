@@ -19,7 +19,9 @@ static short	ft_check_argc(int argc)
 	return (1);	
 }
 
-short			ft_check(int argc, char **argv)
+static short	ft_checkfile(char **argv)
+
+short			ft_check(int argc, char *cpy)
 {
 	if (!ft_check_argc(argc))
 	{
