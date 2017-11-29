@@ -25,9 +25,9 @@ typedef struct	s_trio
 	char			ltr;
 }				t_trio;
 
-void	ft_tadd(t_trio **atrio, t_trio *new);
-t_trio	*ft_tnew(char *str, char ltr);
-char	*ft_flcpy(char *flname);
-short	ft_check(char *cpy);
+void			ft_tadd(t_trio **atrio, t_trio *new);
+t_trio			*ft_tnew(char *str, char ltr);
+char			*ft_flcpy(char *flname);
+short			ft_check(char *cpy);
 
 #endif

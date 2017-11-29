@@ -13,7 +13,7 @@
 #include "../libft/libft.h"
 #include "fillit.h"
 
-short			ft_check_argc(int argc)
+static short	ft_check_argc(int argc)
 {
 	if (argc != 2)
 	{
@@ -23,7 +23,7 @@ short			ft_check_argc(int argc)
 	return (1);
 }
 
-int	main(int argc, char **argv)
+int				main(int argc, char **argv)
 {
 	char	*cpy;
 
