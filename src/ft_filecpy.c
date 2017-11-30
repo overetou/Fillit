@@ -6,7 +6,7 @@
 /*   By: overetou <overetou@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/11/28 19:38:46 by overetou          #+#    #+#             */
-/*   Updated: 2017/11/28 19:39:00 by overetou         ###   ########.fr       */
+/*   Updated: 2017/11/30 15:29:41 by overetou         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,7 @@
 #include <fcntl.h>
 #include <unistd.h>
 
-char	*ft_flcpy(char *flname)
+char	*ft_filecpy(char *flname)
 {
 	int		fd;
 	char	*cpy;

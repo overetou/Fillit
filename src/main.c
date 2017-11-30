@@ -6,7 +6,7 @@
 /*   By: fchevrey <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/11/28 17:25:46 by fchevrey          #+#    #+#             */
-/*   Updated: 2017/11/29 19:59:38 by fchevrey         ###   ########.fr       */
+/*   Updated: 2017/11/30 15:28:40 by overetou         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -30,7 +30,7 @@ int				main(int argc, char **argv)
 
 	if (!ft_check_argc(argc))
 		return (0);
-	if (!(cpy = ft_flcpy(argv[1])) || !ft_check(cpy))
+	if (!(cpy = ft_filecpy(argv[1])) || !ft_check(cpy))
 	{
 		ft_putstr("error\n");
 		return (0);
