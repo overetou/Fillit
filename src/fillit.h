@@ -6,7 +6,7 @@
 /*   By: overetou <overetou@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/11/28 17:59:35 by overetou          #+#    #+#             */
-/*   Updated: 2017/11/30 15:30:08 by overetou         ###   ########.fr       */
+/*   Updated: 2017/11/30 12:29:48 by fchevrey         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -30,5 +30,5 @@ t_trio			*ft_tnew(char *str, char ltr);
 char			*ft_filecpy(char *flname);
 short			ft_check(char *cpy);
 char			**ft_mapnew(int size);
-
+void			ft_mapdel(char ***map);
 #endif

@@ -6,7 +6,7 @@
 /*   By: fchevrey <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/11/28 17:25:46 by fchevrey          #+#    #+#             */
-/*   Updated: 2017/11/30 15:28:40 by overetou         ###   ########.fr       */
+/*   Updated: 2017/11/29 20:12:41 by fchevrey         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -36,6 +36,9 @@ int				main(int argc, char **argv)
 		return (0);
 	}
 	map = ft_mapnew(5);
+	ft_tabprint(map);
+	ft_mapdel(&map);
+	ft_putchar('n');
 	ft_tabprint(map);
 	return (0);
 }
