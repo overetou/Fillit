@@ -6,7 +6,7 @@
 #    By: fchevrey <marvin@42.fr>                    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2017/11/10 17:05:18 by fchevrey          #+#    #+#              #
-#    Updated: 2017/11/30 21:22:32 by fchevrey         ###   ########.fr        #
+#    Updated: 2017/11/30 22:09:44 by fchevrey         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -32,7 +32,7 @@ SRC_LIB = libft/ft_bzero.c libft/ft_isalnum.c libft/ft_isalpha.c libft/ft_isasci
 
 SRC = src/main.c src/ft_check.c src/ft_filecpy.c src/ft_tetrinew.c src/ft_tetriadd.c \
 	  src/ft_mapnew.c src/ft_mapdel.c src/ft_fill_list.c src/ft_tetriprint.c \
-	  src/ft_tetrifind.c src/ft_movetetri.c
+	  src/ft_tetrifind.c src/ft_movetetri.c src/ft_tetridelone.c src/ft_tetridel.c
 
 OBJECT_LIB = $(SRC_LIB:.c=.o)
 
