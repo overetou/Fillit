@@ -26,7 +26,7 @@ static short	ft_check_argc(int argc)
 int				main(int argc, char **argv)
 {
 	char	*cpy;
-	t_trio	*lst;
+	t_tetri	*lst;
 
 	if (!ft_check_argc(argc))
 		return (0);
@@ -36,6 +36,6 @@ int				main(int argc, char **argv)
 		return (0);
 	}
 	lst = ft_fill_list(ft_strsplit(cpy, '\n'));
-	ft_trioprint(lst);
+	ft_tetriprint(lst);
 	return (0);
 }

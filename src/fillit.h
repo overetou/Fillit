@@ -15,20 +15,20 @@
 # include <string.h>
 # include "../libft/libft.h"
 
-typedef struct	s_trio
+typedef struct	s_tetri
 {
-	char			**trio;
-	struct s_trio	*next;
+	char			**tetri;
+	struct s_tetri	*next;
 	char			ltr;
-}				t_trio;
+}				t_tetri;
 
-void			ft_trioadd(t_trio **atrio, t_trio *new);
-t_trio			*ft_trionew(char **str, char ltr);
+void			ft_tetriadd(t_tetri **atetri, t_tetri *new);
+t_tetri			*ft_tetrinew(char **str, char ltr);
 char			*ft_filecpy(char *flname);
 short			ft_check(char *cpy);
 char			**ft_mapnew(int size);
 void			ft_mapdel(char ***map);
-t_trio		*ft_fill_list(char **src);
-void	ft_trioprint(t_trio *list);
+t_tetri		*ft_fill_list(char **src);
+void	ft_tetriprint(t_tetri *list);
 
 #endif

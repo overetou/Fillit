@@ -12,20 +12,20 @@
 
 #include "fillit.h"
 
-t_trio		*ft_fill_list(char **src)
+t_tetri		*ft_fill_list(char **src)
 {
-	t_trio		*out;
-	t_trio		*new;
+	t_tetri		*out;
+	t_tetri		*new;
 	char		ltr;
 
 	ltr = 'A';
-	new = (ft_trionew(src, ltr));
+	new = (ft_tetrinew(src, ltr));
 	out = new;
 	while (*(src + 5))
 	{
 		ltr++;
 		src += 4;
-		new->next = ft_trionew(src, ltr);
+		new->next = ft_tetrinew(src, ltr);
 		new = new->next;
 	}
 	return (out);

@@ -1,7 +1,7 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_trioprint.c                                     :+:      :+:    :+:   */
+/*   ft_tetriprint.c                                     :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: fchevrey <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
@@ -12,11 +12,11 @@
 
 #include "fillit.h"
 
-void	ft_trioprint(t_trio *list)
+void	ft_tetriprint(t_tetri *list)
 {
 	while (list)
 	{
-		ft_tabprint(list->trio);
+		ft_tabprint(list->tetri);
 		list = list->next;
 	}
 }

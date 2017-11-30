@@ -1,7 +1,7 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_tadd.c                                          :+:      :+:    :+:   */
+/*   ft_tetriadd.c                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: fchevrey <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
@@ -12,11 +12,11 @@
 
 #include "fillit.h"
 
-void	ft_trioadd(t_trio **atrio, t_trio *new)
+void	ft_tetriadd(t_tetri **atetri, t_tetri *new)
 {
-	if (new && atrio)
+	if (new && atetri)
 	{
-		new->next = *atrio;
-		*atrio = new;
+		new->next = *atetri;
+		*atetri = new;
 	}
 }

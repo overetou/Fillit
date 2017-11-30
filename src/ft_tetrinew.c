@@ -1,7 +1,7 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_tnew.c                                          :+:      :+:    :+:   */
+/*   ft_tetrinew.c                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: overetou <overetou@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
@@ -13,27 +13,27 @@
 #include <stdlib.h>
 #include "fillit.h"
 
-t_trio	*ft_trionew(char **str, char letter)
+t_tetri	*ft_tetrinew(char **str, char letter)
 {
-	t_trio *new;
+	t_tetri *new;
 	int		i;
 
 	if (!str)
 		return (NULL);
-	if ((new = (t_trio *)malloc(sizeof(t_trio *))) == NULL)
+	if ((new = (t_tetri *)malloc(sizeof(t_tetri))) == NULL)
 		return (NULL);
-	if ((new->trio = (char **)malloc(sizeof(char *) * 5)) == NULL)
+	if ((new->tetri = (char **)malloc(sizeof(char *) * 5)) == NULL)
 		return (NULL);
 	i = 0;
-	new->ltr = letter;
 	while (i < 4)
 	{
-		if (!(new->trio[i] = ft_strnew(4)))
+		if (!(new->tetri[i] = ft_strnew(4)))
 			return (NULL);
-		ft_strcpy(new->trio[i], str[i]);
+		ft_strcpy(new->tetri[i], str[i]);
 		i++;
 	}
-	new->trio[i] = NULL;
+	new->ltr = letter;
+	new->tetri[i] = NULL;
 	new->next = NULL;
 	return (new);
 }
