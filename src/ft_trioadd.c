@@ -6,13 +6,13 @@
 /*   By: fchevrey <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/11/28 19:13:59 by fchevrey          #+#    #+#             */
-/*   Updated: 2017/11/28 19:14:06 by fchevrey         ###   ########.fr       */
+/*   Updated: 2017/11/30 15:37:08 by fchevrey         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "fillit.h"
 
-void	ft_tadd(t_trio **atrio, t_trio *new)
+void	ft_trioadd(t_trio **atrio, t_trio *new)
 {
 	if (new && atrio)
 	{
