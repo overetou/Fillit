@@ -36,6 +36,5 @@ int				main(int argc, char **argv)
 		return (0);
 	}
 	lst = ft_fill_list(ft_strsplit(cpy, '\n'));
-	ft_tetriprint(lst);
 	return (0);
 }
