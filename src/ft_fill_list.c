@@ -17,17 +17,11 @@ t_trio		*ft_fill_list(char **src)
 	t_trio		*out;
 	t_trio		*new;
 	char		ltr;
-	int			i;
-	int			len;
 
-	len = 0;
-	i = 0;
 	ltr = 'A';
 	new = (ft_trionew(src, ltr));
 	out = new;
-	while (src[len])
-		len++;
-	while ((i += 4) < len)
+	while (*(src + 5))
 	{
 		ltr++;
 		src += 4;
