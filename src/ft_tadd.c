@@ -16,7 +16,7 @@ void	ft_tadd(t_trio **atrio, t_trio *new)
 {
 	if (new && atrio)
 	{
-		new->next= *atrio;
+		new->next = *atrio;
 		*atrio = new;
 	}
 }
