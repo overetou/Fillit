@@ -1,41 +1,27 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   main.c                                             :+:      :+:    :+:   */
+/*   ft_tetrifind.c                                     :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: fchevrey <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2017/11/28 17:25:46 by fchevrey          #+#    #+#             */
-/*   Updated: 2017/11/30 21:20:19 by fchevrey         ###   ########.fr       */
+/*   Created: 2017/11/30 21:02:11 by fchevrey          #+#    #+#             */
+/*   Updated: 2017/11/30 21:20:37 by fchevrey         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../libft/libft.h"
 #include "fillit.h"
 
-static short	ft_check_argc(int argc)
+t_tetri		*ft_tetrifind(t_tetri *src, char letter)
 {
-	if (argc != 2)
-	{
-		ft_putstr("usage: fillit input_file\n");
-		return (0);
-	}
-	return (1);
-}
+	t_tetri		*out;
 
-int				main(int argc, char **argv)
-{
-	char	*cpy;
-	t_tetri	*lst;
-
-	if (!ft_check_argc(argc))
-		return (0);
-	if (!(cpy = ft_filecpy(argv[1])) || !ft_check(cpy))
+	out = src;
+	while (out)
 	{
-		ft_putstr("error\n");
-		return (0);
+		if (out->ltr == letter)
+			return (out);
+		out = out->next;
 	}
-	lst = ft_fill_list(ft_strsplit(cpy, '\n'));
-	ft_tetriprint(lst);
-	return (0);
+	return (NULL);
 }
