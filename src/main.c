@@ -30,7 +30,7 @@ int				main(int argc, char **argv)
 
 	if (!ft_check_argc(argc))
 		return (0);
-	if (!(cpy = ft_flcpy(argv[1])) || !ft_check(cpy))
+	if (!(cpy = ft_filecpy(argv[1])) || !ft_check(cpy))
 	{
 		ft_putstr("error\n");
 		return (0);
