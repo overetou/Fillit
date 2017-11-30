@@ -31,7 +31,7 @@ SRC_LIB = libft/ft_bzero.c libft/ft_isalnum.c libft/ft_isalpha.c libft/ft_isasci
 	libft/ft_lstprint.c libft/ft_tabprint.c libft/ft_lstpushback.c libft/ft_lstaddlink.c
 
 SRC = src/main.c src/ft_check.c src/ft_filecpy.c src/ft_tetrinew.c src/ft_tetriadd.c \
-	  src/ft_mapnew.c src/ft_mapdel.c src/ft_fill_list.c src/ft_tetriprint.c
+	  src/ft_mapnew.c src/ft_mapdel.c src/ft_fill_list.c src/ft_tetriprint.c src/ft_movetetri.c
 
 OBJECT_LIB = $(SRC_LIB:.c=.o)
 

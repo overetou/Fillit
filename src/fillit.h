@@ -28,7 +28,8 @@ char			*ft_filecpy(char *flname);
 short			ft_check(char *cpy);
 char			**ft_mapnew(int size);
 void			ft_mapdel(char ***map);
-t_tetri		*ft_fill_list(char **src);
-void	ft_tetriprint(t_tetri *list);
+t_tetri			*ft_fill_list(char **src);
+void			ft_tetriprint(t_tetri *list);
+t_tetri			*ft_movetetri(t_tetri *link);
 
 #endif
