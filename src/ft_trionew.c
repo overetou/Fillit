@@ -6,14 +6,14 @@
 /*   By: overetou <overetou@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/11/28 19:15:11 by overetou          #+#    #+#             */
-/*   Updated: 2017/11/30 17:02:20 by fchevrey         ###   ########.fr       */
+/*   Updated: 2017/11/30 19:20:53 by fchevrey         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <stdlib.h>
 #include "fillit.h"
 
-t_trio	*ft_trionew(char **str, char ltr)
+t_trio	*ft_trionew(char **str, char letter)
 {
 	t_trio *new;
 	int		i;
@@ -25,19 +25,15 @@ t_trio	*ft_trionew(char **str, char ltr)
 	if ((new->trio = (char **)malloc(sizeof(char *) * 5)) == NULL)
 		return (NULL);
 	i = 0;
+	new->ltr = letter;
 	while (i < 4)
 	{
 		if (!(new->trio[i] = ft_strnew(4)))
 			return (NULL);
 		ft_strcpy(new->trio[i], str[i]);
-		ft_putstr("new->trio[i] = ");
-		ft_putendl(new->trio[i]);
-		ft_putstr("str[i] = ");
-		ft_putendl(str[i]);
 		i++;
 	}
 	new->trio[i] = NULL;
-	new->ltr = ltr;
 	new->next = NULL;
 	return (new);
 }
