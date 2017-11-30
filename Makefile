@@ -6,7 +6,7 @@
 #    By: fchevrey <marvin@42.fr>                    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2017/11/10 17:05:18 by fchevrey          #+#    #+#              #
-#    Updated: 2017/11/29 20:13:53 by fchevrey         ###   ########.fr        #
+#    Updated: 2017/11/30 16:36:11 by fchevrey         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -30,8 +30,8 @@ SRC_LIB = libft/ft_bzero.c libft/ft_isalnum.c libft/ft_isalpha.c libft/ft_isasci
 	libft/ft_lstadd.c libft/ft_lstiter.c libft/ft_lstmap.c libft/ft_tests.c \
 	libft/ft_lstprint.c libft/ft_tabprint.c libft/ft_lstpushback.c libft/ft_lstaddlink.c
 
-SRC = src/main.c src/ft_check.c src/ft_flcpy.c src/ft_tadd.c src/ft_tnew.c \
-	  src/ft_mapnew.c src/ft_mapdel.c
+SRC = src/main.c src/ft_check.c src/ft_filecpy.c src/ft_trionew.c src/ft_trioadd.c \
+	  src/ft_mapnew.c src/ft_mapdel.c src/ft_fill_list.c src/ft_trioprint.c
 
 OBJECT_LIB = $(SRC_LIB:.c=.o)
 

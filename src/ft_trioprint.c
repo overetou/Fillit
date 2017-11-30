@@ -1,41 +1,22 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   main.c                                             :+:      :+:    :+:   */
+/*   ft_trioprint.c                                     :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: fchevrey <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2017/11/28 17:25:46 by fchevrey          #+#    #+#             */
-/*   Updated: 2017/11/30 16:44:30 by fchevrey         ###   ########.fr       */
+/*   Created: 2017/11/30 16:23:41 by fchevrey          #+#    #+#             */
+/*   Updated: 2017/11/30 17:45:55 by fchevrey         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../libft/libft.h"
 #include "fillit.h"
 
-static short	ft_check_argc(int argc)
+void	ft_trioprint(t_trio *list)
 {
-	if (argc != 2)
+	while (list)
 	{
-		ft_putstr("usage: fillit input_file\n");
-		return (0);
+		ft_tabprint(list->trio);
+		list = list->next;
 	}
-	return (1);
-}
-
-int				main(int argc, char **argv)
-{
-	char	*cpy;
-	t_trio	*lst;
-
-	if (!ft_check_argc(argc))
-		return (0);
-	if (!(cpy = ft_filecpy(argv[1])) || !ft_check(cpy))
-	{
-		ft_putstr("error\n");
-		return (0);
-	}
-	lst = ft_fill_list(ft_strsplit(cpy, '\n'));
-	ft_trioprint(lst);
-	return (0);
 }
