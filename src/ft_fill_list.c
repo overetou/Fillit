@@ -17,7 +17,9 @@ t_tetri		*ft_fill_list(char **src)
 	t_tetri		*out;
 	t_tetri		*new;
 	char		ltr;
+	void		*f;
 
+	f = &(ft_movetetri);
 	ltr = 'A';
 	new = (ft_tetrinew(src, ltr));
 	out = new;
@@ -28,5 +30,5 @@ t_tetri		*ft_fill_list(char **src)
 		new->next = ft_tetrinew(src, ltr);
 		new = new->next;
 	}
-	return (ft_movetetri(out, 0));
+	return (ft_tetriter(out, f));
 }
