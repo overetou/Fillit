@@ -6,7 +6,7 @@
 /*   By: fchevrey <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/11/28 17:25:46 by fchevrey          #+#    #+#             */
-/*   Updated: 2017/12/01 18:23:53 by fchevrey         ###   ########.fr       */
+/*   Updated: 2017/12/01 19:17:01 by fchevrey         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -48,7 +48,7 @@ int				main(int argc, char **argv)
 		if (!ok)
 		{
 			ft_mapdel(&map);
-			size++;			
+			size++;
 		}
 	}
 	ft_tabprint(map);
