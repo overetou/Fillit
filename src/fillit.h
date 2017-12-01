@@ -6,7 +6,7 @@
 /*   By: overetou <overetou@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/11/28 17:59:35 by overetou          #+#    #+#             */
-/*   Updated: 2017/12/01 12:18:10 by fchevrey         ###   ########.fr       */
+/*   Updated: 2017/12/01 16:35:44 by fchevrey         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -40,5 +40,6 @@ t_tetri			*ft_tetrifind(t_tetri *src, char letter);
 t_tetri			*ft_movetetri(t_tetri *link);
 void			ft_tetridelone(t_tetri **a_supp);
 void			ft_tetridel(t_tetri **lst);
+int				ft_try_place(char **map, t_tetri to_place, t_point crd);
 
 #endif

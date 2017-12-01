@@ -6,7 +6,7 @@
 /*   By: fchevrey <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/11/28 17:25:46 by fchevrey          #+#    #+#             */
-/*   Updated: 2017/11/30 21:20:19 by fchevrey         ###   ########.fr       */
+/*   Updated: 2017/12/01 17:49:01 by fchevrey         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,8 +25,8 @@ static short	ft_check_argc(int argc)
 
 int				main(int argc, char **argv)
 {
-	char	*cpy;
-	t_tetri	*lst;
+	char		*cpy;
+	t_tetri		*lst;
 
 	if (!ft_check_argc(argc))
 		return (0);
