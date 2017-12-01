@@ -13,6 +13,13 @@
 #include "../libft/libft.h"
 #include "fillit.h"
 
+static char ft_find_maxltr(t_tetri *lst)
+{
+	while (lst->next)
+		lst = lst->next;
+	return (lst->ltr);
+}
+
 static short	ft_check_argc(int argc)
 {
 	if (argc != 2)
@@ -27,6 +34,9 @@ int				main(int argc, char **argv)
 {
 	char	*cpy;
 	t_tetri	*lst;
+	char	**map;
+	int     size;
+	int		ok;
 
 	if (!ft_check_argc(argc))
 		return (0);
@@ -36,6 +46,17 @@ int				main(int argc, char **argv)
 		return (0);
 	}
 	lst = ft_fill_list(ft_strsplit(cpy, '\n'));
-	ft_tetriprint(lst);
+	size = 2;
+	while (!ok)
+	{
+		map = ft_mapnew(size);
+		ok = ft_place_all(map, lst, size)
+		if (!ok)
+		{
+			ft_mapdel(&map);
+			size++;			
+		}
+	}
+	ft_tabprint(map);
 	return (0);
 }

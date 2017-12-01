@@ -41,5 +41,6 @@ t_tetri			*ft_movetetri(t_tetri *link, short i);
 void			ft_tetridelone(t_tetri **a_supp);
 void			ft_tetridel(t_tetri **lst);
 t_tetri			*ft_tetriter(t_tetri *lst, t_tetri *(*f)(t_tetri *, short));
+char			**ft_place_all(char **map, char ltr, char ltr_max);
 
 #endif
