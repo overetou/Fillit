@@ -37,7 +37,7 @@ void			ft_mapdel(char ***map);
 t_tetri			*ft_fill_list(char **src);
 void			ft_tetriprint(t_tetri *list);
 t_tetri			*ft_tetrifind(t_tetri *src, char letter);
-t_tetri			*ft_movetetri(t_tetri *link);
+t_tetri			*ft_movetetri(t_tetri *link, short i);
 void			ft_tetridelone(t_tetri **a_supp);
 void			ft_tetridel(t_tetri **lst);
 

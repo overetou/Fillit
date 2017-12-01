@@ -12,28 +12,88 @@
 
 #include "fillit.h"
 
-t_tetri	*ft_movetetri(t_tetri *link)
+static t_tetri	*ft_mvup(t_tetri *link, t_point up)
 {
-	short x;
-	short y;
-	short coord_up[2];
-	//short coord_left[2];
+	t_point	p;
+	int		i;
 
-	x = 0;
-	y = 0;
-	while (link->tetri[x][y] != '#')
+	while (up.x)
 	{
-		if (y == 3)
+		i = 0;
+		p = up;
+		while (i != 4)
 		{
-			x++;
-			y = 0;
+			if (link->tetri[p.x][p.y] == '#')
+			{
+				i++;
+				link->tetri[p.x - 1][p.y] = '#';
+				link->tetri[p.x][p.y] = '.';
+			}
+			if (p.y++ == 3)
+			{
+				p.x++;
+				p.y = 0;
+			}
 		}
-		y++;
+		up.x--;
 	}
-	coord_up[0] = x;
-	coord_up[1] = y;
-	ft_putnbr(coord_up[0]);
-	ft_putstr(", ");
-	ft_putnbr(coord_up[1]);
 	return (link);
+}
+
+static t_tetri	*ft_mvleft(t_tetri *link, t_point up, int y, int i)
+{
+	t_point	p;
+
+	up.x = 0;
+	while (y)
+	{
+		p = up;
+		i = 0;
+		while (i != 4)
+		{
+			if (link->tetri[p.x][p.y] == '#')
+			{
+				i++;
+				link->tetri[p.x][p.y - 1] = '#';
+				link->tetri[p.x][p.y] = '.';
+			}
+			if (p.y++ == 3)
+			{
+				p.x++;
+				p.y = 0;
+			}
+		}
+		up.y--;
+		y--;
+	}
+	return (link);
+}
+
+t_tetri			*ft_movetetri(t_tetri *link, short i)
+{
+	t_point	p;
+	t_point	up;
+	short	left_min;
+
+	p.x = 0;
+	p.y = 0;
+	while (i != 4)
+	{
+		if (link->tetri[p.x][p.y] == '#')
+		{
+			if (i++ == 0)
+			{
+				up = p;
+				left_min = up.y;
+			}
+			else if (p.y < left_min)
+				left_min = p.y;
+		}
+		if (p.y++ == 3)
+		{
+			p.x++;
+			p.y = 0;
+		}
+	}
+	return (ft_mvleft(ft_mvup(link, up), up, left_min, 0));
 }

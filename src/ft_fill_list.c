@@ -28,5 +28,5 @@ t_tetri		*ft_fill_list(char **src)
 		new->next = ft_tetrinew(src, ltr);
 		new = new->next;
 	}
-	return (ft_movetetri(out));
+	return (ft_movetetri(out, 0));
 }
