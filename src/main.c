@@ -6,19 +6,12 @@
 /*   By: fchevrey <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/11/28 17:25:46 by fchevrey          #+#    #+#             */
-/*   Updated: 2017/11/30 21:20:19 by fchevrey         ###   ########.fr       */
+/*   Updated: 2017/12/01 18:23:53 by fchevrey         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../libft/libft.h"
 #include "fillit.h"
-
-static char ft_find_maxltr(t_tetri *lst)
-{
-	while (lst->next)
-		lst = lst->next;
-	return (lst->ltr);
-}
 
 static short	ft_check_argc(int argc)
 {
@@ -47,10 +40,11 @@ int				main(int argc, char **argv)
 	}
 	lst = ft_fill_list(ft_strsplit(cpy, '\n'));
 	size = 2;
+	ok = 0;
 	while (!ok)
 	{
 		map = ft_mapnew(size);
-		ok = ft_place_all(map, lst, size)
+		ok = ft_place_all(map, lst, size);
 		if (!ok)
 		{
 			ft_mapdel(&map);

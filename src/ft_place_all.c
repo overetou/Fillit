@@ -20,10 +20,10 @@ int	ft_place_all(char **map, t_tetri *lst, int size)
 	coord.y = 0;
 	while (coord.x != size)
 	{
-		if (ft_try_place(map, lst, coord))
+		if (ft_try_place(map, *lst, coord))
 		{
 			if (lst->next)
-				return ft_place_all(map, lst->next, size);
+				return (ft_place_all(map, lst->next, size));
 			return (1);
 		}
 		coord.y++;
@@ -33,5 +33,5 @@ int	ft_place_all(char **map, t_tetri *lst, int size)
 			coord.y = 0;
 		}
 	}
-	return (NULL);
+	return (0);
 }

@@ -17,3 +17,11 @@ III-affichage
 void map_display(char **map)affiche la map
 
 Avant de rendre : combien de fichiers auteurs et ou les placer ? Agencement des fichiers ?
+
+map [x][y]
+ y->
+  _____
+x|
+ |
+ |
+ |
