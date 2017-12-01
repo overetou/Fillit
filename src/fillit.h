@@ -6,7 +6,7 @@
 /*   By: overetou <overetou@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/11/28 17:59:35 by overetou          #+#    #+#             */
-/*   Updated: 2017/11/30 22:06:54 by fchevrey         ###   ########.fr       */
+/*   Updated: 2017/12/01 12:18:10 by fchevrey         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,6 +21,12 @@ typedef struct	s_tetri
 	struct s_tetri	*next;
 	char			ltr;
 }				t_tetri;
+
+typedef struct	s_point
+{
+	int		x;
+	int		y;
+}				t_point;
 
 void			ft_tetriadd(t_tetri **atetri, t_tetri *new);
 t_tetri			*ft_tetrinew(char **str, char ltr);

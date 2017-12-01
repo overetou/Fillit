@@ -1,22 +1,16 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_tetriadd.c                                      :+:      :+:    :+:   */
+/*   ft_place.c                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: fchevrey <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2017/11/28 19:13:59 by fchevrey          #+#    #+#             */
-/*   Updated: 2017/12/01 12:13:29 by fchevrey         ###   ########.fr       */
+/*   Created: 2017/12/01 12:09:08 by fchevrey          #+#    #+#             */
+/*   Updated: 2017/12/01 12:11:19 by fchevrey         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "fillit.h"
-
-void	ft_tetriadd(t_tetri **atetri, t_tetri *new)
+void	ft_place(char **map, t_tetri to_place, t_point coord)
 {
-	if (new && atetri)
-	{
-		new->next = *atetri;
-		*atetri = new;
-	}
+
 }
