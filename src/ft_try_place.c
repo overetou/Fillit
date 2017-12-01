@@ -40,6 +40,7 @@ int					ft_try_place(char **map, t_tetri to_place, t_point crd)
 	t_point		*crd_t;
 
 	i = 1;
+
 	if (!(crd_t = (t_point *)malloc(sizeof(t_point) * 4)))
 		return (0);
 	if (!(map[crd.x][crd.y]) || map[crd.x][crd.y] != '.')

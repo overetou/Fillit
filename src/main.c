@@ -25,9 +25,11 @@ static short	ft_check_argc(int argc)
 
 int				main(int argc, char **argv)
 {
-	char		*cpy;
-	t_tetri		*lst;
-	char		**map;
+	char	*cpy;
+	t_tetri	*lst;
+	char	**map;
+	int     size;
+	int		ok;
 
 	if (!ft_check_argc(argc))
 		return (0);
@@ -37,5 +39,18 @@ int				main(int argc, char **argv)
 		return (0);
 	}
 	lst = ft_fill_list(ft_strsplit(cpy, '\n'));
+	size = 2;
+	ok = 0;
+	while (!ok)
+	{
+		map = ft_mapnew(size);
+		ok = ft_place_all(map, lst, size);
+		if (!ok)
+		{
+			ft_mapdel(&map);
+			size++;			
+		}
+	}
+	ft_tabprint(map);
 	return (0);
 }
