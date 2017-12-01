@@ -6,7 +6,7 @@
 /*   By: fchevrey <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/11/28 17:25:46 by fchevrey          #+#    #+#             */
-/*   Updated: 2017/12/01 17:49:01 by fchevrey         ###   ########.fr       */
+/*   Updated: 2017/12/01 18:23:53 by fchevrey         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,6 +27,7 @@ int				main(int argc, char **argv)
 {
 	char		*cpy;
 	t_tetri		*lst;
+	char		**map;
 
 	if (!ft_check_argc(argc))
 		return (0);
@@ -36,6 +37,5 @@ int				main(int argc, char **argv)
 		return (0);
 	}
 	lst = ft_fill_list(ft_strsplit(cpy, '\n'));
-	ft_tetriprint(lst);
 	return (0);
 }
