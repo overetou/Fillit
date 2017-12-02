@@ -6,7 +6,7 @@
 /*   By: overetou <overetou@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/12/01 16:54:40 by overetou          #+#    #+#             */
-/*   Updated: 2017/12/01 16:54:44 by overetou         ###   ########.fr       */
+/*   Updated: 2017/12/02 17:18:41 by fchevrey         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,7 +19,7 @@ char	**ft_place_all(char **map, t_tetri *lst, int size)
 
 	coord.x = 0;
 	coord.y = 0;
-	ft_mapcpy(map2, map);
+	map2 =ft_mapcpy( map);
 	while (coord.x != size)
 	{
 		if (ft_try_place(map, *lst, coord))
