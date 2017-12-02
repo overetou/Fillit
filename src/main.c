@@ -29,7 +29,7 @@ int				main(int argc, char **argv)
 	t_tetri	*lst;
 	char	**map;
 	int     size;
-	int		ok;
+	int 	ok;
 
 	if (!ft_check_argc(argc))
 		return (0);
@@ -38,21 +38,18 @@ int				main(int argc, char **argv)
 		ft_putstr("error\n");
 		return (0);
 	}
-	lst = ft_fill_list((map = ft_strsplit(cpy, '\n')));
-	ft_strdel(&cpy);
-	ft_mapdel(&map);
-	size = 2;
+	
+	lst = ft_fill_list(ft_strsplit(cpy, '\n'));
+	map = NULL;
+	size = 1;
 	ok = 0;
-	while (!map)
+	
+	while (!ok)
 	{
+		size++;
 		map = ft_mapnew(size);
-		map = ft_place_all(map, lst, size);
-		if (!map)
-		{
+		if (!(ok = ft_place_all(map, lst, size)))
 			ft_mapdel(&map);
-			size++;
-		}
-	}
-	ft_tabprint(map);
+	}	
 	return (0);
 }

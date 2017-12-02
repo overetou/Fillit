@@ -12,20 +12,39 @@
 
 #include "fillit.h"
 
-char	**ft_place_all(char **map, t_tetri *lst, int size)
+static void	ft_tabcpy(char **dest, char **src)
+{
+	int i = 0;
+
+	while (src[i])
+	{
+		ft_strcpy(dest[i], src[i]);
+		i++;
+	}
+}
+
+int	ft_place_all(char **map, t_tetri *lst, int size)
 {
 	t_point coord;
 	char	**map2;
 
+	map2 = ft_mapcpy(map);
 	coord.x = 0;
 	coord.y = 0;
-	map2 = ft_mapcpy(map);
 	while (coord.x != size)
 	{
 		if (ft_try_place(map2, *lst, coord))
 		{
-			if (!lst->next || (map2 =ft_place_all(map2, lst->next, size)))
-				return (map2);
+			if (!lst->next)
+			{
+				ft_tabprint(map2);
+				ft_tabcpy(map, map2);
+				ft_mapdel(&map2);
+				return (1);
+			}
+			if (ft_place_all(map2, lst->next, size))
+				return (1);
+			ft_tabcpy(map2, map);
 		}
 		coord.y++;
 		if (coord.y == size)
@@ -35,5 +54,5 @@ char	**ft_place_all(char **map, t_tetri *lst, int size)
 		}
 	}
 	ft_mapdel(&map2);
-	return (NULL);
+	return (0);
 }

@@ -42,7 +42,7 @@ void			ft_tetridelone(t_tetri **a_supp);
 void			ft_tetridel(t_tetri **lst);
 int				ft_try_place(char **map, t_tetri to_place, t_point crd);
 t_tetri			*ft_tetriter(t_tetri *lst, t_tetri *(*f)(t_tetri *, short));
-char			**ft_place_all(char **map, t_tetri *lst, int size);
+int				ft_place_all(char **map, t_tetri *lst, int size);
 int				ft_mapcheck(t_tetri *first,char  **map);
 char			**ft_mapcpy(char **src);
 
