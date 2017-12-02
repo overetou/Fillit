@@ -18,15 +18,18 @@ t_tetri		*ft_fill_list(char **src)
 	t_tetri		*new;
 	char		ltr;
 	void		*f;
+	int			i;
 
 	f = &(ft_movetetri);
 	ltr = 'A';
-	new = (ft_tetrinew(src, ltr));
+	i = 0;
+	if (!(new = (ft_tetrinew(src, ltr))))
+		return (NULL);
 	out = new;
-	while (*(src + 5))
+	while (src[i + 5])
 	{
 		ltr++;
-		src += 4;
+		i += 4;
 		new->next = ft_tetrinew(src, ltr);
 		new = new->next;
 	}

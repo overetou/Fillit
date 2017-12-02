@@ -41,6 +41,7 @@ int				main(int argc, char **argv)
 	lst = ft_fill_list(ft_strsplit(cpy, '\n'));
 	size = 2;
 	ok = 0;
+
 	while (!ok)
 	{
 		map = ft_mapnew(size);
