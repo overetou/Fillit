@@ -25,3 +25,5 @@ x|
  |
  |
  |
+
+Verifs avant de push : bien relire toutes les consignes, securiser chaque malloc et free toute memoire alouee
