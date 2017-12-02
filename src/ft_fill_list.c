@@ -18,7 +18,6 @@ t_tetri		*ft_fill_list(char **src)
 	t_tetri		*new;
 	char		ltr;
 	void		*f;
-	int			i;
 
 	f = &(ft_movetetri);
 	ltr = 'A';
@@ -28,7 +27,7 @@ t_tetri		*ft_fill_list(char **src)
 	while (*(src + 4))
 	{
 		ltr++;
-		i += 4;
+		src += 4;
 		new->next = ft_tetrinew(src, ltr);
 		new = new->next;
 	}
