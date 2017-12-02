@@ -6,7 +6,7 @@
 #    By: fchevrey <marvin@42.fr>                    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2017/11/10 17:05:18 by fchevrey          #+#    #+#              #
-#    Updated: 2017/12/02 20:08:08 by fchevrey         ###   ########.fr        #
+#    Updated: 2017/12/02 22:38:35 by fchevrey         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -28,7 +28,8 @@ SRC_LIB = libft/ft_bzero.c libft/ft_isalnum.c libft/ft_isalpha.c libft/ft_isasci
 	libft/ft_strstr.c libft/ft_strsub.c libft/ft_strtrim.c libft/ft_tolower.c \
 	libft/ft_toupper.c libft/ft_lstnew.c libft/ft_lstdelone.c libft/ft_lstdel.c \
 	libft/ft_lstadd.c libft/ft_lstiter.c libft/ft_lstmap.c libft/ft_tests.c \
-	libft/ft_lstprint.c libft/ft_tabprint.c libft/ft_lstpushback.c libft/ft_lstaddlink.c
+	libft/ft_lstprint.c libft/ft_tabprint.c libft/ft_lstpushback.c libft/ft_lstaddlink.c \
+	libft/ft_atoi.c
 
 SRC = src/main.c src/ft_check.c src/ft_filecpy.c src/ft_tetrinew.c src/ft_tetriadd.c \
 	  src/ft_mapnew.c src/ft_mapdel.c src/ft_fill_list.c src/ft_tetriprint.c \
@@ -47,12 +48,13 @@ CC = gcc
 
 all: $(NAME)
 
-$(NAME): lib $(OBJECT)
+$(NAME): $(LIB) $(OBJECT)
 	gcc -o $(NAME) $(CFLAGS) $(OBJECT) -L. -lft
 
-lib: $(OBJECT_LIB)
+$(LIB): $(OBJECT_LIB)
 	ar  rc $(LIB) $(OBJECT_LIB)
 	ranlib $(LIB)
+
 clean:
 	rm -f $(OBJECT) $(OBJECT_LIB)
 
