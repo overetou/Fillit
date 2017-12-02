@@ -12,19 +12,20 @@
 
 #include "fillit.h"
 
-int	ft_place_all(char **map, t_tetri *lst, int size)
+char	**ft_place_all(char **map, t_tetri *lst, int size)
 {
 	t_point coord;
+	char	**map2;
 
 	coord.x = 0;
 	coord.y = 0;
+	ft_mapcpy(map2, map);
 	while (coord.x != size)
 	{
 		if (ft_try_place(map, *lst, coord))
 		{
-			if (lst->next)
-				return (ft_place_all(map, lst->next, size));
-			return (1);
+			if (!lst->next || ft_place_all(map2, lst->next, size))
+				return (map2);
 		}
 		coord.y++;
 		if (coord.y == size)

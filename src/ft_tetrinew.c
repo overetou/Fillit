@@ -25,7 +25,7 @@ t_tetri	*ft_tetrinew(char **str, char letter)
 	if ((new->tetri = (char **)malloc(sizeof(char *) * 5)) == NULL)
 		return (NULL);
 	i = 0;
-	while (i < 4)
+	while (i != 4)
 	{
 		if (!(new->tetri[i] = ft_strnew(4)))
 			return (NULL);
