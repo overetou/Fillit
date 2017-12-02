@@ -6,16 +6,17 @@
 /*   By: overetou <overetou@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/12/01 16:54:40 by overetou          #+#    #+#             */
-/*   Updated: 2017/12/02 17:26:43 by fchevrey         ###   ########.fr       */
+/*   Updated: 2017/12/02 20:16:12 by fchevrey         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "fillit.h"
 
-static void	ft_tabcpy(char **dest, char **src)
+static void		ft_tabcpy(char **dest, char **src)
 {
-	int i = 0;
+	int i;
 
+	i = 0;
 	while (src[i])
 	{
 		ft_strcpy(dest[i], src[i]);
@@ -23,7 +24,18 @@ static void	ft_tabcpy(char **dest, char **src)
 	}
 }
 
-int	ft_place_all(char **map, t_tetri *lst, int size)
+t_point			ft_cplus(t_point coord, int max)
+{
+	coord.y++;
+	if (coord.y == max)
+	{
+		coord.x++;
+		coord.y = 0;
+	}
+	return (coord);
+}
+
+int				ft_place_all(char **map, t_tetri *lst, int size)
 {
 	t_point coord;
 	char	**map2;
@@ -38,7 +50,6 @@ int	ft_place_all(char **map, t_tetri *lst, int size)
 			if (!lst->next)
 			{
 				ft_tabprint(map2);
-				ft_tabcpy(map, map2);
 				ft_mapdel(&map2);
 				return (1);
 			}
@@ -46,12 +57,7 @@ int	ft_place_all(char **map, t_tetri *lst, int size)
 				return (1);
 			ft_tabcpy(map2, map);
 		}
-		coord.y++;
-		if (coord.y == size)
-		{
-			coord.x++;
-			coord.y = 0;
-		}
+		coord = ft_cplus(coord, size);
 	}
 	ft_mapdel(&map2);
 	return (0);
