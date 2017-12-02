@@ -21,9 +21,10 @@ t_tetri		*ft_fill_list(char **src)
 
 	f = &(ft_movetetri);
 	ltr = 'A';
-	new = (ft_tetrinew(src, ltr));
+	if (!(new = (ft_tetrinew(src, ltr))))
+		return (NULL);
 	out = new;
-	while (*(src + 5))
+	while (*(src + 4))
 	{
 		ltr++;
 		src += 4;
