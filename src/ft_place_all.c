@@ -40,7 +40,8 @@ int				ft_place_all(char **map, t_tetri *lst, int size)
 	t_point coord;
 	char	**map2;
 
-	map2 = ft_mapcpy(map);
+	if (!(map2 = ft_mapcpy(map)))
+		return (1);
 	coord.x = 0;
 	coord.y = 0;
 	while (coord.x != size)

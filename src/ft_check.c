@@ -25,16 +25,16 @@ static int		ft_ifhtg_countlinks(char *cpy, int x, int endl)
 
 	n = 0;
 	if (cpy[x] == '#')
-		{
-			if (endl % 5 != 0)
-				n = ft_iflink_incr(cpy, x, -5);
-			if (endl % 5 < 3)
-				n += ft_iflink_incr(cpy, x, 5);
-			if (x)
-				n += ft_iflink_incr(cpy, x, -1);
-			n += ft_iflink_incr(cpy, x, 1);
-		}
-		return (n);
+	{
+		if (endl % 5 != 0)
+			n = ft_iflink_incr(cpy, x, -5);
+		if (endl % 5 < 3)
+			n += ft_iflink_incr(cpy, x, 5);
+		if (x)
+			n += ft_iflink_incr(cpy, x, -1);
+		n += ft_iflink_incr(cpy, x, 1);
+	}
+	return (n);
 }
 
 static short	ft_check_tetr(char *cpy)
@@ -55,6 +55,7 @@ static short	ft_check_tetr(char *cpy)
 				endl++;
 			x++;
 		}
+		endl = 0;
 		if (t < 6)
 			return (0);
 	}

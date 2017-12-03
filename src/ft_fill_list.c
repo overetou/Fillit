@@ -19,6 +19,8 @@ t_tetri		*ft_fill_list(char **src)
 	char		ltr;
 	void		*f;
 
+	if (!src)
+		return (NULL);
 	f = &(ft_movetetri);
 	ltr = 'A';
 	if (!(new = (ft_tetrinew(src, ltr))))
