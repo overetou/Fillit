@@ -6,7 +6,7 @@
 /*   By: fchevrey <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/12/01 12:09:08 by fchevrey          #+#    #+#             */
-/*   Updated: 2017/12/02 20:28:39 by fchevrey         ###   ########.fr       */
+/*   Updated: 2017/12/03 15:26:58 by fchevrey         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -34,7 +34,7 @@ static t_point		ft_find_next_h(char **tetri, int num)
 	return (crd);
 }
 
-t_point				*ft_str_to_crd(char **tetri)
+static t_point		*ft_str_to_crd(char **tetri, t_point crd_map)
 {
 	t_point		*dst;
 	int			i;
@@ -46,34 +46,34 @@ t_point				*ft_str_to_crd(char **tetri)
 	while (++i < 4)
 	{
 		dst[i] = ft_find_next_h(tetri, i + 1);
-		dst[i].x = dst[i].x - dst[0].x;
-		dst[i].y = dst[i].y - dst[0].y;
+		dst[i] = ft_bc_pt(dst[i], dst[0], '-');
+		dst[i] = ft_bc_pt(dst[i], crd_map, '+');
 	}
+	dst[0] = crd_map;
 	return (dst);
 }
 
-int					ft_try_place(char **map, t_tetri to_place, t_point crd)
+int					ft_try_place(char **map, t_tetri to_place, t_point crd_map)
 {
 	int			i;
 	t_point		*crd_t;
 
-	i = 1;
-	if (!(map[crd.x][crd.y]) || map[crd.x][crd.y] != '.')
+	i = 0;
+	if (!(map[crd_map.x][crd_map.y]) || map[crd_map.x][crd_map.y] != '.')
 		return (0);
-	if (!(crd_t = ft_str_to_crd(to_place.tetri)))
+	if (!(crd_t = ft_str_to_crd(to_place.tetri, crd_map)))
 		return (0);
 	while (i < 4)
 	{
-		if (crd_t[i].x > 0 && !(map[crd.x + crd_t[i].x]))
+		if (crd_t[i].x > 0 && !(map[crd_t[i].x]))
 			return (0);
-		if (!(map[crd.x + crd_t[i].x][crd.y + crd_t[i].y])
-			|| map[crd.x + crd_t[i].x][crd.y + crd_t[i].y] != '.')
+		if (!(map[crd_t[i].x][crd_t[i].y]) ||
+				map[crd_t[i].x][crd_t[i].y] != '.')
 			return (0);
 		i++;
 	}
-	map[crd.x][crd.y] = to_place.ltr;
-	i = 0;
+	i = -1;
 	while (++i < 4)
-		map[crd.x + crd_t[i].x][crd.y + crd_t[i].y] = to_place.ltr;
+		map[crd_t[i].x][crd_t[i].y] = to_place.ltr;
 	return (1);
 }
