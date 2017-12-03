@@ -6,7 +6,7 @@
 /*   By: fchevrey <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/11/29 19:43:15 by fchevrey          #+#    #+#             */
-/*   Updated: 2017/11/29 20:05:02 by fchevrey         ###   ########.fr       */
+/*   Updated: 2017/12/03 16:09:41 by fchevrey         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,7 +24,7 @@ char	**ft_mapnew(int size)
 	map[size] = NULL;
 	i = size;
 	while (i--)
-		if (!(map[i] = ft_strnew(i)))
+		if (!(map[i] = ft_strnew(size)))
 			return (NULL);
 	i = -1;
 	while (map[++i])
