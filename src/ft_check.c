@@ -6,13 +6,13 @@
 /*   By: overetou <overetou@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/11/28 20:31:37 by overetou          #+#    #+#             */
-/*   Updated: 2017/11/29 16:39:49 by fchevrey         ###   ########.fr       */
+/*   Updated: 2017/12/03 18:28:52 by fchevrey         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "fillit.h"
 
-static short	ft_htg_incr(char *cpy, int x, int y)
+static int	ft_htg_incr(char *cpy, int x, int y)
 {
 	if (cpy[x + y] == '#')
 		return (1);
@@ -23,7 +23,7 @@ static short	ft_check_tetr(char *cpy)
 {
 	int				x;
 	unsigned int	endl;
-	short			t;
+	int			t;
 
 	x = 0;
 	t = 0;
@@ -33,12 +33,12 @@ static short	ft_check_tetr(char *cpy)
 		if (cpy[x] == '#')
 		{
 			if (endl % 5 != 0)
-				t += ft_htg_incr(cpy, x, -5);
+				t = t + ft_htg_incr(cpy, x, -5);
 			if (endl % 5 < 3)
-				t += ft_htg_incr(cpy, x, 5);
+				t = t + ft_htg_incr(cpy, x, 5);
 			if (x)
-				t += ft_htg_incr(cpy, x, -1);
-			t += ft_htg_incr(cpy, x, 1);
+				t = t + ft_htg_incr(cpy, x, -1);
+			t = t + ft_htg_incr(cpy, x, 1);
 		}
 		if (cpy[x++] == '\n')
 			endl++;
@@ -77,7 +77,9 @@ static short	ft_do_count(char *cpy)
 
 short			ft_check(char *cpy)
 {
-	if (!ft_do_count(cpy) || !ft_check_tetr(cpy))
+	if (!ft_do_count(cpy))
+		return (0);
+	if (!ft_check_tetr(cpy))
 		return (0);
 	return (1);
 }
