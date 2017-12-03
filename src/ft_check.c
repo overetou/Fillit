@@ -23,29 +23,27 @@ static short	ft_check_tetr(char *cpy)
 {
 	int				x;
 	unsigned int	endl;
-	short			n;
+	short			t;
 
 	x = 0;
+	t = 0;
 	endl = 0;
 	while (cpy[x])
 	{
-		n = 0;
 		if (cpy[x] == '#')
 		{
 			if (endl % 5 != 0)
-				n = n + ft_htg_incr(cpy, x, -5);
+				t += ft_htg_incr(cpy, x, -5);
 			if (endl % 5 < 3)
-				n = n + ft_htg_incr(cpy, x, 5);
+				t += ft_htg_incr(cpy, x, 5);
 			if (x)
-				n = n + ft_htg_incr(cpy, x, -1);
-			n = n + ft_htg_incr(cpy, x, 1);
-			if (n < 1)
-				return (0);
+				t += ft_htg_incr(cpy, x, -1);
+			t += ft_htg_incr(cpy, x, 1);
 		}
 		if (cpy[x++] == '\n')
 			endl++;
 	}
-	return (1);
+	return (t >= 6 ? 1 : 0);
 }
 
 static short	ft_do_count(char *cpy)
