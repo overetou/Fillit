@@ -48,11 +48,11 @@ static short	ft_check_tetr(char *cpy)
 	return (1);
 }
 
-static short	ft_countbs(char *cpy)
+static short	ft_do_count(char *cpy)
 {
-	unsigned int	pt;
-	unsigned int	htg;
-	unsigned int	endl;
+	size_t	pt;
+	size_t	htg;
+	size_t	endl;
 
 	while (*cpy)
 	{
@@ -63,21 +63,23 @@ static short	ft_countbs(char *cpy)
 		{
 			if (*cpy == '.')
 				pt++;
-			if (*cpy == '#')
+			else if (*cpy == '#')
 				htg++;
-			if (*cpy == '\n')
+			else if (*cpy == '\n')
 				endl++;
+			else
+				return (0);
 			cpy++;
 		}
-		if (pt != 12 || htg != 4 || endl != 5)
+		if (pt != 12 || htg != 4)
 			return (0);
 	}
-	return (1);
+	return (endl != 4 ? 0 : 1);
 }
 
 short			ft_check(char *cpy)
 {
-	if (!ft_countbs(cpy) || !ft_check_tetr(cpy))
+	if (!ft_do_count(cpy) || !ft_check_tetr(cpy))
 		return (0);
 	return (1);
 }
