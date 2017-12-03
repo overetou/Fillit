@@ -19,13 +19,17 @@ char	**ft_mapcpy(char **src)
 	int		i;
 
 	i = 0;
+	if (!src)
+		return (NULL);
 	while (src[i])
 		i++;
-	cpy = (char **)malloc(sizeof(char*) * (i + 1));
+	if (!(cpy = (char **)malloc(sizeof(char*) * (i + 1))))
+		return (NULL);
 	i = 0;
 	while (src[i])
 	{
-		cpy[i] = ft_strdup(src[i]);
+		if (!(cpy[i] = ft_strdup(src[i])))
+			return (NULL);
 		i++;
 	}
 	cpy[i] = NULL;

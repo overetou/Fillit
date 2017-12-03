@@ -44,8 +44,8 @@ int				main(int argc, char **argv)
 	ok = 0;
 	while (!ok)
 	{
-		size++;
-		map = ft_mapnew(size);
+		if (!(map = ft_mapnew(++size)))
+			return (1);
 		if (!(ok = ft_place_all(map, lst, size)))
 			ft_mapdel(&map);
 	}
