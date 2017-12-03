@@ -37,7 +37,22 @@ SRC = src/main.c src/ft_check.c src/ft_filecpy.c src/ft_tetrinew.c src/ft_tetria
 	  src/ft_tetriter.c src/ft_place_all.c src/ft_try_place.c src/ft_mapcpy.c \
 	  src/ft_pt_op.c
 
-OBJECT_LIB = $(SRC_LIB:.c=.o)
+OBJECT_LIB = ft_bzero.o ft_isalnum.o ft_isalpha.o ft_isascii.o \
+	ft_isdigit.o ft_isprint.o ft_itoa.o ft_memalloc.o ft_memccpy.o \
+	ft_memchr.o ft_memcmp.o ft_memcpy.o ft_memdel.o ft_memmove.o \
+	ft_memset.o ft_putchar.o ft_putchar_fd.o ft_putendl.o \
+	ft_putendl_fd.o ft_putnbr.o ft_putnbr_fd.o ft_putstr.o \
+	ft_putstr_fd.o ft_strcat.o ft_strchr.o ft_strclr.o \
+	ft_strcmp.o ft_strcpy.o ft_strdel.o ft_strdup.o \
+	ft_strequ.o ft_striter.o ft_striteri.o ft_strjoin.o \
+	ft_strlcat.o ft_strlen.o ft_strmap.o ft_strmapi.o \
+	ft_strncat.o ft_strncmp.o ft_strncpy.o ft_strnequ.o \
+	ft_strnew.o ft_strnstr.o ft_strrchr.o ft_strsplit.o \
+	ft_strstr.o ft_strsub.o ft_strtrim.o ft_tolower.o \
+	ft_toupper.o ft_lstnew.o ft_lstdelone.o ft_lstdel.o \
+	ft_lstadd.o ft_lstiter.o ft_lstmap.o ft_tests.o \
+	ft_lstprint.o ft_tabprint.o ft_lstpushback.o ft_lstaddlink.o \
+	ft_atoi.o
 
 OBJECT= $(SRC:.c=.o)
 
@@ -52,8 +67,9 @@ all: $(NAME)
 $(NAME): $(LIB) $(OBJECT)
 	gcc -o $(NAME) $(CFLAGS) $(OBJECT) -L. -lft
 
-$(LIB): $(OBJECT_LIB)
-	ar  rc $(LIB) $(OBJECT_LIB)
+$(LIB):
+	gcc -Werror -Wextra -Wall -c $(SRC_LIB) -I ./libft
+	ar rc $(LIB) $(OBJECT_LIB)
 	ranlib $(LIB)
 
 clean:
