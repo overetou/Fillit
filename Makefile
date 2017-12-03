@@ -6,7 +6,7 @@
 #    By: fchevrey <marvin@42.fr>                    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2017/11/10 17:05:18 by fchevrey          #+#    #+#              #
-#    Updated: 2017/12/03 15:12:14 by fchevrey         ###   ########.fr        #
+#    Updated: 2017/12/03 15:47:12 by fchevrey         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -35,7 +35,7 @@ SRC = src/main.c src/ft_check.c src/ft_filecpy.c src/ft_tetrinew.c src/ft_tetria
 	  src/ft_mapnew.c src/ft_mapdel.c src/ft_fill_list.c src/ft_tetriprint.c \
 	  src/ft_movetetri.c src/ft_tetridelone.c src/ft_tetridel.c \
 	  src/ft_tetriter.c src/ft_place_all.c src/ft_try_place.c src/ft_mapcpy.c \
-	  src/ft_bc_pt.c
+	  src/ft_pt_op.c
 
 OBJECT_LIB = $(SRC_LIB:.c=.o)
 

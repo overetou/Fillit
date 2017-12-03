@@ -6,7 +6,7 @@
 /*   By: fchevrey <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/12/01 12:09:08 by fchevrey          #+#    #+#             */
-/*   Updated: 2017/12/03 15:26:58 by fchevrey         ###   ########.fr       */
+/*   Updated: 2017/12/03 15:46:48 by fchevrey         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -46,8 +46,8 @@ static t_point		*ft_str_to_crd(char **tetri, t_point crd_map)
 	while (++i < 4)
 	{
 		dst[i] = ft_find_next_h(tetri, i + 1);
-		dst[i] = ft_bc_pt(dst[i], dst[0], '-');
-		dst[i] = ft_bc_pt(dst[i], crd_map, '+');
+		dst[i] = ft_pt_op(dst[i], dst[0], '-');
+		dst[i] = ft_pt_op(dst[i], crd_map, '+');
 	}
 	dst[0] = crd_map;
 	return (dst);
